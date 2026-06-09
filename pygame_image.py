@@ -20,27 +20,29 @@ def main():
     
     while True:
         han=0
+        yoko = 0
+        tate = 0
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_list = pg.key.get_pressed()
         if key_list[pg.K_UP]:#上矢印キーを取得
-            kou_3_rect.move_ip((0,-1))#上に移動
+            tate-=1
             han=1
         if key_list[pg.K_DOWN]:#下矢印キーを取得
-            kou_3_rect.move_ip((0,+1))#下に移動
+            tate+=1#下に移動
             han=1
         if key_list[pg.K_RIGHT]:#右矢印キーを取得
-            kou_3_rect.move_ip((+1,0))#右に移動
+            yoko+=1#右に移動
             han = 1
         if key_list[pg.K_LEFT]:#左矢印キーを取得
-            kou_3_rect.move_ip((-1,0)) # 左に移動
+            yoko -= 1 # 左に移動
             han=1
         x= tmr%3200 #練習９余りが3199より上にはならない
         if han==0:
-            kou_3_rect.move_ip(-1,0)
-        #演習課題１
-
-
+            yoko-=1
+        #演習課題１,２    
+        kou_3_rect.move_ip((yoko,tate))
+        
         #画面surfaceに張り付けている
         screen.blit(bg_img, [-x,0])#練習5背景画像が動く
         screen.blit(bg_img_hanten,[-x+1600,0])#練習７、８背景に背景をついかする,不自然に追加されないようにする
