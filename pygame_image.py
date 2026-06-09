@@ -31,6 +31,7 @@ def main():
             han=1
         if key_list[pg.K_RIGHT]:#右矢印キーを取得
             kou_3_rect.move_ip((+1,0))#右に移動
+            han = 1
         if key_list[pg.K_LEFT]:#左矢印キーを取得
             kou_3_rect.move_ip((-1,0)) # 左に移動
             han=1
