@@ -17,11 +17,11 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         #画面surfaceに張り付けている
-        screen.blit(bg_img, [0, 0])
+        screen.blit(bg_img, [-tmr,0])#練習5背景画像が動く
         screen.blit(koukaton_3,[300,200])#練習4こうかとんを描画
         pg.display.update()
         tmr += 1        
-        clock.tick(10)
+        clock.tick(200)#練習6fps200
 
 
 if __name__ == "__main__":
