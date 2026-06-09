@@ -11,13 +11,14 @@ def main():
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")
     koukaton_3 = pg.image.load("fig/3.png")
+    koukaton_3=pg.transform.flip(koukaton_3,True,False)
     tmr = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         #画面surfaceに張り付けている
         screen.blit(bg_img, [0, 0])
-        screen.blit(koukaton_3,[300,200])
+        screen.blit(koukaton_3,[300,200])#練習4こうかとんを描画
         pg.display.update()
         tmr += 1        
         clock.tick(10)
